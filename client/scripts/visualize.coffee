@@ -100,6 +100,9 @@ Template.visualize.events {
 
     #Set the file prefix
     filename = $('#file').val()
+
+    Session.set('file', filename)
+    
     #Call the meteor on the server to load the set of files and when finish load up the background image to the canvas
     Meteor.call('update', filename, ->
       $('#canvas').css('background', 'url(/'+filename+'-pic.png)')
